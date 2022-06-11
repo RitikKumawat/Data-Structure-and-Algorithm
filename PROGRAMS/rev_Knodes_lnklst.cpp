@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+class node{
+    public:
+    int data;
+    node* next;
+
+    node(int val){
+        data=val;
+        next = NULL;
+    }
+};
+void insertAtTail(node* &head, int val){
+    node* n=new node(val);
+    node* temp=head;
+    if(head==NULL){
+        head=n;
+        return;
+    }
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+        temp->next=n;
+}
+void display(node* head){
+    node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<"->";
+        temp=temp->next;
+    }cout<<"NULL"<<endl;
+}
+node* reverseK(node* &head, int k){
+    node* prev = NULL;
+    node* curr = head;
+    node* nextptr;
+    int count=0;
+    while(curr!=NULL && count<k ){
+        nextptr=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=nextptr;
+        count++;
+    }
+    if(nextptr!=NULL){
+    head->next=reverseK(nextptr,k);
+    }
+    return prev;
+}
+
+int main(){
+node* head=NULL;
+insertAtTail(head,10);
+insertAtTail(head,20);
+insertAtTail(head,30);
+insertAtTail(head,40);
+insertAtTail(head,50);
+insertAtTail(head,60);
+display(head);
+int k=2;
+node* newhead= reverseK(head,k);
+display(newhead);
+
+return 0;
+}

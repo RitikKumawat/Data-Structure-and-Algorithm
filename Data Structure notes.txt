@@ -1,0 +1,9 @@
+Data Structure and Algorithms
+
+Algorithm- An algorithm is a step by step unambigious instructions to solve a given problem.
+In the traditional study of algorithms, there are two main criteria for judging the merits of algorithms- 1.Correctness( does the algorithm give solution to the problem in finite number of steps) , 
+2.Efficiency(how much resources (in terms of memory and time) it requires to run  an algorithm).
+
+Why analysis of algorithm?
+Algorithm analysis helps us to determine which algorithm is most efficient in terms of space and time consumed.
+
