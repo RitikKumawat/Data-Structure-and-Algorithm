@@ -19,6 +19,6 @@ string removeDup(string s){
     return ch+ans;
 }
 int main(){
-cout<<removeDup("aaaabbbeeecdddd")<<endl;;
+cout<<removeDup("aaaaabbbeeecdddd")<<endl;;
 return 0;
 }
